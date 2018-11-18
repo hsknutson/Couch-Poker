@@ -24,6 +24,7 @@ function init() {
 
   document.getElementById('submit-username')
   	.addEventListener("click", submitUsername);
+ 	
 }
 
 function submitUsername() {
