@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+}
+
+.view {
+	height: 100vh;
+	width: 100vw;
+}
+
+#start-view {
+	display: grid;
+	grid-template-areas: "."
+											 "form"
+											 "."
+											 "submit";
+	place-items: center;
+}
+
+#enter-username-div {
+	grid-area: form;
+}
+
+#submit-username-div {
+	grid-area: submit;
+}

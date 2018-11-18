@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/controller.css">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body onload="init()">
+	<div id="no-game-view" class="view default-view">
+
+	</div>
+
+	<div id="start-view" class="view">
+		<div id="enter-username-div">
+			<input id="input-username" type="text" name="username" placeholder="Enter Username">
+		</div>
+		<div id="submit-username-div">
+			<button id="submit-username">Submit</button>
+		</div>
+	</div>
+
+	<div id="wait-view" class="view">
+		
+	</div>
+
+	<div id="action-view" class="view">
+		
+	</div>
+
+	<div id="analytics-view" class="view">
+		
+	</div>
 	<script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.7.0.js"></script>
+	<script type="text/javascript" src="../js/controller.js"></script>
+	<script type="text/javascript" src="../js/airconsole-view-manager.js"></script>
 </body>
 </html>
