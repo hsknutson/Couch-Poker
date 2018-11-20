@@ -10,24 +10,44 @@
 
 	</div>
 
-	<div id="start-view" class="view">
+	<div id="submit-username-view" class="view">
+		<div id="game-tip" style="font-size:58px;">Couch Poker</div>
 		<div id="enter-username-div">
-			<input id="input-username" type="text" name="username" placeholder="Enter Username">
+			<input id="input-username" type="text" name="username" placeholder="Name">
 		</div>
 		<div id="submit-username-div">
-			<button id="submit-username">Submit</button>
+			<button id="submit-username">Start Playing!</button>
 		</div>
 	</div>
 
-	<div id="wait-view" class="view">
-		<h1>Waiting view</h1>
+    <div id="host-view" class="view">
+		<div id="game-tip">You're the host! Wait for everyone to join the game before starting!</div>
+		<div id="host-div">
+			<button id="start-game">Click if everyone joined!</button>
+		</div>
+	</div>
+
+	<div id="game-not-ready-view" class="view">
+		<div id="game-tip">Waiting for the game to finish setting up...</div>
+	</div>
+
+    <div id="waiting-for-host-view" class="view">
+		<div id="game-tip">Waiting for more players...</div>
+	</div>
+
+	<div id="max-players-reached-view" class="view">
+		<div id="game-tip">Unable to join. The maximum number of players has been reached.</div>
 	</div>
 
 	<div id="action-view" class="view">
-		<h1>Action View</h1>
+		<img id='hole-card-1'><img id='hole-card-2'>
+		<button id="fold-button">Fold</button>
+		<button id="check-button">Check</button>
+		<button id="call-button">Call</button>
+		<button id="bet-button">Bet</button>
 	</div>
 
-	<div id="analytics-view" class="view">
+	<div id="hand-history-view" class="view">
 		<h1>Analytics View</h1>
 	</div>
 
