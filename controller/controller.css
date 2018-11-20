@@ -148,7 +148,7 @@ input {
 }
 
 .view {
-	height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
 }
 
@@ -356,17 +356,20 @@ input {
 	display: none;
 }
 
-#ranking-row {
-	height: 9vh;
+.ranking-row {
 	background: #303030;
+}
+
+.ranking-row-svgs {
+	height: 9vh;
 	display: flex;
 	justify-content: space-around;
 }
 
-#ranking-row-info {
+.ranking-row-info {
 	padding: 10px;
-	width: 150%;
 	overflow: visible;
+	text-align: center;
 }
 
 #header {

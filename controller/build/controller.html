@@ -360,14 +360,14 @@ input {
 	display: none;
 }
 
-#ranking-row {
+.ranking-row-svgs {
 	height: 9vh;
 	background: #303030;
 	display: flex;
 	justify-content: space-around;
 }
 
-#ranking-row-info {
+.ranking-row-info {
 	padding: 10px;
 	width: 150%;
 	overflow: visible;
@@ -508,104 +508,126 @@ input {
 			<div id="header-title">Ranking Guide</div>
 			<div id="header-description">(Ace can either be the lowest or the highest card.)</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/Ah.svg">
-			<img src="Cards/Kh.svg">
-			<img src="Cards/Qh.svg">
-			<img src="Cards/Jh.svg">
-			<img src="Cards/Th.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Royal Flush</div>
-				<div id="hand-rank-description">Highest-ranking straight flush</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/Ah.svg">
+				<img src="CardsSvg/Kh.svg">
+				<img src="CardsSvg/Qh.svg">
+				<img src="CardsSvg/Jh.svg">
+				<img src="CardsSvg/Th.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Royal Flush</div>
+				<div class="hand-rank-description">Highest-ranking straight flush</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/5h.svg">
-			<img src="Cards/4h.svg">
-			<img src="Cards/3h.svg">
-			<img src="Cards/2h.svg">
-			<img src="Cards/Ah.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Straight Flush</div>
-				<div id="hand-rank-description">5 cards in rank order, same suit</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/5h.svg">
+				<img src="CardsSvg/4h.svg">
+				<img src="CardsSvg/3h.svg">
+				<img src="CardsSvg/2h.svg">
+				<img src="CardsSvg/Ah.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Straight Flush</div>
+				<div class="hand-rank-description">5 cards in rank order, same suit</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/4s.svg">
-			<img src="Cards/4h.svg">
-			<img src="Cards/4c.svg">
-			<img src="Cards/4d.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Four of a Kind</div>
-				<div id="hand-rank-description">4 of the same rank</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/4s.svg">
+				<img src="CardsSvg/4h.svg">
+				<img src="CardsSvg/4c.svg">
+				<img src="CardsSvg/4d.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Four of a Kind</div>
+				<div class="hand-rank-description">4 of the same rank</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/Js.svg">
-			<img src="Cards/Jh.svg">
-			<img src="Cards/Jc.svg">
-			<img src="Cards/Qd.svg">
-			<img src="Cards/Qs.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Full House</div>
-				<div id="hand-rank-description">3 same rank + 2 same rank</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/Js.svg">
+				<img src="CardsSvg/Jh.svg">
+				<img src="CardsSvg/Jc.svg">
+				<img src="CardsSvg/Qd.svg">
+				<img src="CardsSvg/Qs.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Full House</div>
+				<div class="hand-rank-description">3 same rank + 2 same rank</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/Ah.svg">
-			<img src="Cards/Th.svg">
-			<img src="Cards/8h.svg">
-			<img src="Cards/3h.svg">
-			<img src="Cards/2h.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Flush</div>
-				<div id="hand-rank-description">5 cards of same suit</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/Ah.svg">
+				<img src="CardsSvg/Th.svg">
+				<img src="CardsSvg/8h.svg">
+				<img src="CardsSvg/3h.svg">
+				<img src="CardsSvg/2h.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Flush</div>
+				<div class="hand-rank-description">5 cards of same suit</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/8s.svg">
-			<img src="Cards/7d.svg">
-			<img src="Cards/6c.svg">
-			<img src="Cards/5c.svg">
-			<img src="Cards/4h.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Straight</div>
-				<div id="hand-rank-description">5 cards in rank order</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/8s.svg">
+				<img src="CardsSvg/7d.svg">
+				<img src="CardsSvg/6c.svg">
+				<img src="CardsSvg/5c.svg">
+				<img src="CardsSvg/4h.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Straight</div>
+				<div class="hand-rank-description">5 cards in rank order</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/Ah.svg">
-			<img src="Cards/Ac.svg">
-			<img src="Cards/Ad.svg">
-			<img src="Cards/8s.svg">
-			<img src="Cards/4h.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Three of a Kind</div>
-				<div id="hand-rank-description">3 same rank</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/Ah.svg">
+				<img src="CardsSvg/Ac.svg">
+				<img src="CardsSvg/Ad.svg">
+				<img src="CardsSvg/8s.svg">
+				<img src="CardsSvg/4h.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Three of a Kind</div>
+				<div class="hand-rank-description">3 same rank</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/Th.svg">
-			<img src="Cards/Tc.svg">
-			<img src="Cards/9h.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Two Pair</div>
-				<div id="hand-rank-description">2 same rank, twice</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/Th.svg">
+				<img src="CardsSvg/Tc.svg">
+				<img src="CardsSvg/9h.svg">
+				<img src="CardsSvg/9c.svg">
+				<img src="CardsSvg/3d.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Two Pair</div>
+				<div class="hand-rank-description">2 same rank, twice</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/6d.svg">
-			<img src="Cards/6c.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">Pair</div>
-				<div id="hand-rank-description">2 same rank</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/6d.svg">
+				<img src="CardsSvg/6c.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">Pair</div>
+				<div class="hand-rank-description">2 same rank</div>
 			</div>
 		</div>
-		<div id="ranking-row">
-			<img src="Cards/Ah.svg">
-			<div id="ranking-row-info">
-				<div id="hand-rank">High Card</div>
-				<div id="hand-rank-description">Highest ranking card, no other hands</div>
+		<div class="ranking-row">
+			<div class="ranking-row-svgs">
+				<img src="CardsSvg/Ah.svg">
+			</div>
+			<div class="ranking-row-info">
+				<div class="hand-rank">High Card</div>
+				<div class="hand-rank-description">Highest ranking card, no other hands</div>
 			</div>
 		</div>
 	</div>

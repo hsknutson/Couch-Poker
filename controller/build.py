@@ -26,19 +26,19 @@ def help():
 	print("\t       python3 build.py <folder name>\n")
 	print("\tthe latter will build each html file within the folder")
 
-def build(file):
+def build(file, outFolder="build"):
 	if isdir(file):
 		chdir(file)
 		for f in listdir("./"):
 			if f.endswith(".html"):
-				buildFile(f)
+				buildFile(f, outFolder)
 	elif isfile(file):
-		buildFile(file)
+		buildFile(file, outFolder)
 	else:
 		print("Given file or directory doesn't exist.\n", file=stderr)
 		exit(1)
 
-def buildFile(file):
+def buildFile(file, outFolder):
 	with open(file, "r") as f:
 		data = f.read()
 		newData = ""
@@ -62,10 +62,10 @@ def buildFile(file):
 
 		newData += data[currentIndex:]
 		
-		if not isdir("build"):
-			mkdir("build")
+		if not isdir(outFolder):
+			mkdir(outFolder)
 
-		with open("build/" + file, "w") as f2:
+		with open(outFolder + "/" + file, "w") as f2:
 			f2.write(newData)
 
 
@@ -75,3 +75,5 @@ if __name__ == '__main__':
 		help()
 	elif len(argv) == 2:
 		build(argv[1])
+	elif len(argv) == 3:
+		build(argv[1], argv[2])
