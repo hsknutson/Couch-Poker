@@ -21,10 +21,12 @@ def help():
 	print("\tCreate production-ready html files by")
 	print("\tinlining all local javascript or css files")
 	print("\tand putting the resulting files into a build folder\n")
-	print("\tusage: python3 build.py <html file>")
+	print("\tusage: python3 build.py <html file> <optional output folder>")
 	print("\t       --- OR ---")
-	print("\t       python3 build.py <folder name>\n")
-	print("\tthe latter will build each html file within the folder")
+	print("\t       python3 build.py <folder name> <optional output folder>\n")
+	print("\tthe latter will build each html file within the folder\n")
+	print("\tto ouput in the parent folder, do: ")
+	print("\t\tpython3 build.py <html file> ../")
 
 def build(file, outFolder="build"):
 	if isdir(file):
