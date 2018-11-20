@@ -1,6 +1,150 @@
+/* Inported Styling */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: white;
+	cursor: pointer; /* Cursor on hover */
+	border: 1px rgb(34,106,136);;
+}
+
+.slider::-moz-range-thumb {
+	width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: white;
+	cursor: pointer; /* Cursor on hover */
+	border: 3px rgb(34,106,136);
+}
+
+.nav {
+	-webkit-transition: left 0.5s ease;
+	-moz-transition: left 0.5s ease;
+	-ms-transition: left 0.5s ease;
+	-o-transition: left 0.5s ease;
+	transition: left 0.5s ease;
+	background: rgba(94, 94, 94, 0.94);
+	color: white;
+	cursor: pointer;
+	font-size: 2rem;
+	height: 100vh;
+	left: -100%;
+	position: fixed;
+	top: 0;
+	width: 45vw;;
+	z-index: 1;
+  }
+  
+  .nav.expanded { left: 0; }
+  
+  .nav ul {
+	width: 100%;
+	top: 25%;
+	-webkit-transform: translateY(-25%);
+	-ms-transform: translateY(-25%);
+	transform: translateY(-25%);
+	list-style: none;
+	margin-top: 15vh;
+	padding: 0;
+  }
+
+  .nav li button{
+	  border: 0;
+	  background-color: transparent;
+	  color: white;
+  }
+  .nav li button:hover{
+	background-color: white;
+	color: black;
+}
+
+  .nav-toggle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: fixed;
+  height: 20px;
+  left: 10px;
+  top: 16px;
+  width: 40px;
+  z-index: 2;
+}
+
+.nav-toggle:hover { opacity: 0.8; }
+
+.nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: white;
+  content: '';
+  height: 0.4rem;
+  width: 100%;
+}
+
+.nav-toggle .nav-toggle-bar { margin-top: 0; }
+
+.nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+
+.nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+
+.nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+
+.nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+  background: white;
+  margin-top: 0;
+}
+
+.nav-toggle.expanded .nav-toggle-bar::after {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-toggle.expanded .nav-toggle-bar::before {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.ul {
+	width: 100%;
+}
+
+/*****************************************/
+
+div {
+	font-family: "Verdana", Geneva, sans-serif;
+}
+
 body {
-	background-color: #067A32;
+	background-color: rgb(34,106,136);
 	margin: 0;
+}
+
+button {
+	color:rgb(34,106,136);
+}
+
+input {
+	
+	color:rgb(34,106,136);
 }
 
 .view {
@@ -44,9 +188,9 @@ body {
 	height: 60px;
 	font-size: 28px;
 	border: 2px;
-	border-color: rgb(5, 100, 41);
+	border-color: rgb(116,203,234);
 	border-radius: 15px 5px 15px 5px;
-	box-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px rgb(5, 100, 41);
+	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
 }
 
 #submit-username {
@@ -58,13 +202,12 @@ body {
 	height: 70px;
 	margin-left: 25%;
 	font-size: 24px;
-	border-color: rgb(5, 100, 41);
+	border-color: rgb(116,203,234);
 	border-radius: 15px 5px 15px 5px;
-	box-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px rgb(5, 100, 41);
+	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
 }
 
 #game-tip {
-	font-family: "Verdana", Geneva, sans-serif;
 	position: absolute;
 	margin-top: 10vh;
 	margin-left: 10%;
@@ -72,7 +215,7 @@ body {
 	width: 80%;
 	font-size: 14px;
 	color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px rgb(5, 100, 41);
+	text-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234);
 }
 
 #start-game {
@@ -83,8 +226,189 @@ body {
 	height: 70px;
 	margin-left: 15%;
 	font-size: 24px;
-	border-color: rgb(5, 100, 41);
+	border-color: rgb(116,203,234);
 	border-radius: 15px 5px 15px 5px;
-	box-shadow: 1px 1px 2px black, 0 0 25px rgb(5, 100, 41), 0 0 5px rgb(5, 100, 41);
+	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
 }
+
+.move-button {
+	border: 2px;
+	width: 25%;
+	height: 50px;
+	font-size: 3vw;
+	border-color: rgb(116,203,234);
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px black, 0 0 3px rgb(116,203,234), 0 0 3px rgb(116,203,234);}
+
+#move-bar {
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	width: 100%;
+	text-align: justify;
+    display: flex;
+  	justify-content: space-around;
+	zoom: 1;
+}
+
+#player-information {
+	text-align: center;
+	margin-top: 2vh;
+	font-size: 3vh;
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 3px rgb(116,203,234);
+}
+
+#card-row {
+	margin-top: 15vh;
+	display: flex;
+	justify-content: space-around;
+}
+
+#hole-card-1 {
+	width: 45%;
+	height: 62vw;
+	background: url("Cards/As.svg") no-repeat top left;
+	background-size: contain;
+	border-radius: 40px;
+	box-shadow: 1px 1px 2px black, 0 0 10px rgb(116,203,234), 0 0 5px rgb(116,203,234);
+}
+
+#hole-card-2 {
+	width: 45%;
+	height: 62vw;
+	background: url("Cards/As.svg") no-repeat top left;
+	background-size: contain;
+	border-radius: 40px;
+	box-shadow: 1px 1px 2px black, 0 0 10px rgb(116,203,234), 0 0 5px rgb(116,203,234);}
+
+
+#slider-row {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.slider {
+    width: 100%; /* Full-width */
+    height: 40px; /* Specified height */
+    outline: none; /* Remove outline */
+}
+
+#input-betting-amount {
+	width: 15vw;
+	text-align: center;
+	font-size: 3vw;
+	height: 50px;
+	border-color: rgb(5, 100, 41);
+	box-shadow: -1px -1px -1px black, 0 0 5px rgb(116,203,234), 0 0 5px rgb(116,203,234);}
+
+#betting-controls {
+	background-color: rgba(255, 255, 255, 0.145);
+	padding: 10px;
+}
+
+#betting-amount-slider {
+	margin-top: 1vh;
+	vertical-align: middle;
+	width: 72vw;
+	font-size: 4vw;
+}
+
+#button-row {
+	margin-top: 1.5vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+#button-panel {
+	margin-top: 1.5vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.betting-button {
+	border: 2px;
+	width: 25vw;
+	height: 7vw;
+	font-size: 3vw;
+	border-color: rgb(5, 100, 41);
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px black, 0 0 3px rgb(116,203,234), 0 0 3px rgb(116,203,234);}
+
+#plus-bet-button {
+	width: 7vw;
+	height: 7vw;
+}
+
+#minus-bet-button {
+	width: 7vw;
+	height: 7vw;
+}
+
+
+#username-text {
+	font-size: 4vh;
+}
+
+#waiting-statement {
+	display: none;
+}
+
+#ranking-row {
+	height: 9vh;
+	background: #303030;
+	display: flex;
+	justify-content: space-around;
+}
+
+#ranking-row-info {
+	padding: 10px;
+	width: 150%;
+	overflow: visible;
+}
+
+#header {
+	padding: 2.5vh;
+	justify-content: center;
+}
+
+#header-title {
+	font-size: 4vw;
+	color: white;
+	text-align: center;
+}
+
+#header-description {
+	vertical-align: middle;
+	font-style: oblique;
+	font-size: 2vw;
+	color: white;
+	text-align: center;
+}
+
+#hand-rank {
+	font-style: oblique;
+	font-size: 2vh;
+	color: white;
+}
+
+#hand-rank-description {
+	font-style: oblique;
+	font-size: 1.5vh;
+	color: white;
+}
+
+.open-subpage {
+	width: 100%;
+	height: 6vh;
+	font-size: 5vw;
+}
+
+.button {
+	background-color: white;
+}
+
+
 
