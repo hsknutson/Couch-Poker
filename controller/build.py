@@ -17,13 +17,14 @@ CSS_PATTERN = re.compile(r'<!-- css (.*.css) -->(.*)<!-- css \1 -->', re.DOTALL)
 JS_PATTERN = re.compile(r'<!-- js ([\w-]+.js) -->(.*)<!-- js \1 -->', re.DOTALL)
 
 def help():
-	print("Create production-ready html files by")
-	print("inlining all local javascript or css files")
-	print("and putting the resulting files into a build folder\n")
-	print("usage: python3 build.py <html file>")
-	print("       --- OR ---")
-	print("       python3 build.py <folder name>")
-	print("the latter will build each html file within the folder")
+	print("\t-------------------- Build.py Help --------------------\n")
+	print("\tCreate production-ready html files by")
+	print("\tinlining all local javascript or css files")
+	print("\tand putting the resulting files into a build folder\n")
+	print("\tusage: python3 build.py <html file>")
+	print("\t       --- OR ---")
+	print("\t       python3 build.py <folder name>\n")
+	print("\tthe latter will build each html file within the folder")
 
 def build(file):
 	if isdir(file):
