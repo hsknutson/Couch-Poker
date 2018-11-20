@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- css controller.css -->
 	<link rel="stylesheet" type="text/css" href="controller.css">
-	<!-- css controller.css -->
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -18,14 +16,14 @@
 			<input id="input-username" type="text" name="username" placeholder="Name">
 		</div>
 		<div id="submit-username-div">
-			<button id="submit-username">Start Playing!</button>
+			<button id="submit-username">Join Game</button>
 		</div>
 	</div>
 
     <div id="host-view" class="view">
 		<div id="game-tip">You're the host! Wait for everyone to join the game before starting!</div>
 		<div id="host-div">
-			<button id="start-game">Click if everyone joined!</button>
+			<button id="start-game">Start Game</button>
 		</div>
 	</div>
 
@@ -41,24 +39,169 @@
 		<div id="game-tip">Unable to join. The maximum number of players has been reached.</div>
 	</div>
 
+	<div id="waiting-statement">
+		<div id="game-tip" style="margin-top: 70vh;">
+			Waiting on another player to play...
+		</div>
+	</div>
+
 	<div id="action-view" class="view">
-		<img id='hole-card-1'><img id='hole-card-2'>
-		<button id="fold-button">Fold</button>
-		<button id="check-button">Check</button>
-		<button id="call-button">Call</button>
-		<button id="bet-button">Bet</button>
+		<nav class="nav">
+			<ul>
+				<li><button id="player-hand-button" class="open-subpage">Your Hand</button></li>
+				<li><button id="hand-history-button" class="open-subpage">Hand History</button></li>
+				<li><button id="ranking-guide-button" class="open-subpage">Ranking Guide</button></li>
+				<li><button id="about-button" class="open-subpage">About the Devs</button></li>
+			</ul>
+		</nav>
+			<div class="nav-toggle">
+				<div class="nav-toggle-bar"></div>
+			</div>
+		<div id="card-row">
+			<div id='hole-card-1'></div><div id='hole-card-2'></div>
+		</div>
+		<div id ="player-information">
+			<div id="username-text">Player</div>
+			<div id="chip-count-text">1000 chips</div>
+		</div>
+		<div id="action-controls">
+			<div id="move-bar">
+				<button id="fold-button" class="move-button">Fold</button><button id="check-button" class="move-button">Check</button><button id="call-button" class="move-button">Call</button><button id="bet-button" class="move-button">Bet</button><button id="raise-button" class="move-button">Raise</button>
+			</div>
+			<div id="betting-controls">
+				<div id="slider-row">
+						<input id="input-betting-amount" type="number" name="betting-amount" placeholder="0">
+						<input type="range" min="0" max="100" value="0" class="slider" id="betting-amount-slider">
+				</div>
+				<div id="button-row">
+					<button id="minus-bet-button" class="betting-button">-</button>
+					<button id="plus-bet-button" class="betting-button">+</button>
+					<button id="half-pot-bet-button" class="betting-button">1/2</button>
+					<button id="pot-bet-button" class="betting-button">POT</button>
+					<button id="max-bet-button" class="betting-button">MAX</button>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div id="hand-history-view" class="view">
 		<h1>Analytics View</h1>
 	</div>
 
+	<div id="ranking-guide-view" class="view">
+		<div id="header">
+			<div id="header-title">Ranking Guide</div>
+			<div id="header-description">(Ace can either be the lowest or the highest card.)</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ah.svg">
+			<img src="Cards/Kh.svg">
+			<img src="Cards/Qh.svg">
+			<img src="Cards/Jh.svg">
+			<img src="Cards/Th.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Royal Flush</div>
+				<div id="hand-rank-description">Highest-ranking straight flush</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/5h.svg">
+			<img src="Cards/4h.svg">
+			<img src="Cards/3h.svg">
+			<img src="Cards/2h.svg">
+			<img src="Cards/Ah.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Straight Flush</div>
+				<div id="hand-rank-description">5 cards in rank order, same suit</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/4s.svg">
+			<img src="Cards/4h.svg">
+			<img src="Cards/4c.svg">
+			<img src="Cards/4d.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Four of a Kind</div>
+				<div id="hand-rank-description">4 of the same rank</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Js.svg">
+			<img src="Cards/Jh.svg">
+			<img src="Cards/Jc.svg">
+			<img src="Cards/Qd.svg">
+			<img src="Cards/Qs.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Full House</div>
+				<div id="hand-rank-description">3 same rank + 2 same rank</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ah.svg">
+			<img src="Cards/Th.svg">
+			<img src="Cards/8h.svg">
+			<img src="Cards/3h.svg">
+			<img src="Cards/2h.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Flush</div>
+				<div id="hand-rank-description">5 cards of same suit</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/8s.svg">
+			<img src="Cards/7d.svg">
+			<img src="Cards/6c.svg">
+			<img src="Cards/5c.svg">
+			<img src="Cards/4h.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Straight</div>
+				<div id="hand-rank-description">5 cards in rank order</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ah.svg">
+			<img src="Cards/Ac.svg">
+			<img src="Cards/Ad.svg">
+			<img src="Cards/8s.svg">
+			<img src="Cards/4h.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Three of a Kind</div>
+				<div id="hand-rank-description">3 same rank</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Th.svg">
+			<img src="Cards/Tc.svg">
+			<img src="Cards/9h.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Two Pair</div>
+				<div id="hand-rank-description">2 same rank, twice</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/6d.svg">
+			<img src="Cards/6c.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">Pair</div>
+				<div id="hand-rank-description">2 same rank</div>
+			</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ah.svg">
+			<div id="ranking-row-info">
+				<div id="hand-rank">High Card</div>
+				<div id="hand-rank-description">Highest ranking card, no other hands</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="about-view" class="view">
+		<h1>About the Devs</h1>
+	</div>
+
 	<script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.7.0.js"></script>
-	<!-- js controller.js -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="controller.js"></script>
-	<!-- js controller.js -->
-	<!-- js airconsole-view-manager.js -->
 	<script type="text/javascript" src="airconsole-view-manager.js"></script>
-	<!-- js airconsole-view-manager.js -->
 </body>
 </html>
