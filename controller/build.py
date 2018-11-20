@@ -3,21 +3,30 @@ from sys import argv, exit, stderr
 from os import chdir, listdir, mkdir
 from os.path import isfile, isdir
 
-CSS_PATTERN = re.compile(r'<!-- css ([\w-]+.css) -->(.*)<!-- css \1 -->', re.DOTALL)
+"""
+The build script for the production controller html file
+
+Python 3 is needed to run
+
+Usage: python3 build.py controller.html
+
+Will output the html file to build/controller.html
+"""
+
+CSS_PATTERN = re.compile(r'<!-- css (.*.css) -->(.*)<!-- css \1 -->', re.DOTALL)
 JS_PATTERN = re.compile(r'<!-- js ([\w-]+.js) -->(.*)<!-- js \1 -->', re.DOTALL)
 
 def help():
 	print("Create production-ready html files by")
 	print("inlining all local javascript or css files")
 	print("and putting the resulting files into a build folder\n")
-	print("usage: ./build.py <html file>")
+	print("usage: python3 build.py <html file>")
 	print("       --- OR ---")
-	print("       ./build.py <folder name>")
+	print("       python3 build.py <folder name>")
 	print("the latter will build each html file within the folder")
 
 def build(file):
 	if isdir(file):
-		# ...
 		chdir(file)
 		for f in listdir("./"):
 			if f.endswith(".html"):
