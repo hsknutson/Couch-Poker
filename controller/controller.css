@@ -357,10 +357,12 @@ input {
 }
 
 .ranking-row {
-	background: #303030;
+	padding: 5px 0px;
+	border-bottom: 1px solid #303030;
 }
 
 .ranking-row-svgs {
+	margin-top: 5px;
 	height: 9vh;
 	display: flex;
 	justify-content: space-around;
@@ -368,7 +370,6 @@ input {
 
 .ranking-row-info {
 	padding: 10px;
-	overflow: visible;
 	text-align: center;
 }
 
