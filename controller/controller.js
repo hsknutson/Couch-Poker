@@ -1,6 +1,5 @@
 var airconsole = null;
 var vm = null;
-init();
 
 var src1;
 var src2
@@ -35,9 +34,9 @@ function init() {
         vm.show("waiting-for-host-view");
       if (from == AirConsole.SCREEN && data.action == "YOUR_CARDS") {
         vm.show("action-view");
-        src1 = "Cards/" + data.holeCard1 + ".svg";
+        src1 = "svg-bundle.svg#" + data.holeCard1;
         console.log(src1);
-        src2 = "Cards/" + data.holeCard2 + ".svg";
+        src2 = "svg-bundle.svg#" + data.holeCard2;
         showHoleCard('hole-card-1', src1, 50, 70, data.holeCard1);
         showHoleCard('hole-card-2', src2, 50, 70, data.holeCard2);
       }
@@ -388,8 +387,8 @@ function startGame() {
 }
 
 function showHoleCard(id, src, width, height, alt) {
-  var img = document.createElement("img");
-  img.src = src;
+  var img = document.getElementById(id);
+  img.innerHTML = "<svg>" + "<use xlink:href=\"" + src + "\" /></svg>";
   img.width = width;
   img.height = height;
   img.alt = alt;
