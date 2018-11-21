@@ -151,6 +151,12 @@ input {
 	color:rgb(34,106,136);
 }
 
+.row {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 10px 20px;
+}
+
 .view {
 	min-height: 100vh;
 	width: 100vw;
@@ -166,13 +172,11 @@ input {
 }
 
 #enter-username-div {
-	width: 80%;
 	font-size: 32px;
 	grid-area: form;
 }
 
 #submit-username-div {
-	width: 100%;
 	font-size: 24px;
 	grid-area: submit;
 }
@@ -184,11 +188,7 @@ input {
 }
 
 #input-username {
-	position: absolute;
 	text-align: center;
-	margin-top: 60vh;
-	margin-left: 5%;
-	width: 90%;
 	height: 60px;
 	font-size: 28px;
 	border: 2px;
@@ -198,23 +198,22 @@ input {
 }
 
 #submit-username {
-	background-color:white;
+	background-color: white;
 	border: 2px;
-	position: absolute;
-	margin-top: 80vh;
-	width: 50%;
 	height: 70px;
-	margin-left: 25%;
+	width: 150px;
+	margin: 0 auto;
 	font-size: 24px;
+	text-align: center;
 	border-color: rgb(116,203,234);
 	border-radius: 15px 5px 15px 5px;
 	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
 }
 
-#game-tip {
-	position: absolute;
+.game-tip {
+	position: relative;
 	margin-top: 10vh;
-	margin-left: 10%;
+	margin: 0 auto;
 	text-align: center;
 	width: 80%;
 	font-size: 14px;
@@ -249,8 +248,6 @@ input {
 	margin-bottom: 2vh;
 	width: 100%;
 	text-align: justify;
-    display: flex;
-  	justify-content: space-around;
 	zoom: 1;
 }
 
@@ -263,7 +260,7 @@ input {
 }
 
 #card-row {
-	margin-top: 15vh;
+	margin-top: 5vh;
 	display: flex;
 	justify-content: space-around;
 }
@@ -429,8 +426,8 @@ input {
 
 	</div>
 
-	<div id="submit-username-view" class="view">
-		<div id="game-tip" style="font-size:58px;">Couch Poker</div>
+	<div id="start-view" class="view">
+		<div class="game-tip" style="font-size:50px;">Couch Poker</div>
 		<div id="enter-username-div">
 			<input id="input-username" type="text" name="username" placeholder="Name">
 		</div>
@@ -439,27 +436,27 @@ input {
 		</div>
 	</div>
 
-    <div id="host-view" class="view">
-		<div id="game-tip">You're the host! Wait for everyone to join the game before starting!</div>
+	<div id="host-view" class="view">
+		<div class="game-tip">You're the host! Wait for everyone to join the game before starting!</div>
 		<div id="host-div">
 			<button id="start-game">Start Game</button>
 		</div>
 	</div>
 
 	<div id="game-not-ready-view" class="view">
-		<div id="game-tip">Waiting for the game to finish setting up...</div>
+		<div class="game-tip">Waiting for the game to finish setting up...</div>
 	</div>
 
-    <div id="waiting-for-host-view" class="view">
-		<div id="game-tip">Waiting for more players...</div>
+	<div id="waiting-for-host-view" class="view">
+		<div class="game-tip">Waiting for more players...</div>
 	</div>
 
 	<div id="max-players-reached-view" class="view">
-		<div id="game-tip">Unable to join. The maximum number of players has been reached.</div>
+		<div class="game-tip">Unable to join. The maximum number of players has been reached.</div>
 	</div>
 
 	<div id="waiting-statement">
-		<div id="game-tip" style="margin-top: 70vh;">
+		<div class="game-tip" style="margin-top: 70vh;">
 			Waiting on another player to play...
 		</div>
 	</div>
@@ -473,9 +470,12 @@ input {
 				<li><button id="about-button" class="open-subpage">About the Devs</button></li>
 			</ul>
 		</nav>
-			<div class="nav-toggle">
-				<div class="nav-toggle-bar"></div>
-			</div>
+		<div class="nav-toggle">
+			<div class="nav-toggle-bar"></div>
+		</div>
+
+		<div class="game-tip" style="font-size: 50px;">Your Hand</div>
+
 		<div id="card-row">
 			<div id='hole-card-1'></div><div id='hole-card-2'></div>
 		</div>
@@ -485,7 +485,15 @@ input {
 		</div>
 		<div id="action-controls">
 			<div id="move-bar">
-				<button id="fold-button" class="move-button">Fold</button><button id="check-button" class="move-button">Check</button><button id="call-button" class="move-button">Call</button><button id="bet-button" class="move-button">Bet</button><button id="raise-button" class="move-button">Raise</button>
+				<div class="row">
+					<button id="fold-button" class="move-button">Fold</button>
+					<button id="check-button" class="move-button">Check</button>
+				</div>
+				<div class="row">
+					<button id="call-button" class="move-button">Call</button>
+					<button id="bet-button" class="move-button">Bet</button>
+					<button id="raise-button" class="move-button">Raise</button>
+				</div>
 			</div>
 			<div id="betting-controls">
 				<div id="slider-row">
