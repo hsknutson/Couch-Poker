@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="controller.css">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="init()">
+	<div id="nav-bar"></div>
+	<nav class="nav">
+		<ul>
+			<li><button id="player-hand-button" class="open-subpage">Home<span id="notification-badge-two" class="button_badge_2">1</span></button></li>
+			<li><button id="hand-history-button" class="open-subpage">View Previous Hands</button></li>
+			<li><button id="ranking-guide-button" class="open-subpage">Poker Hand Rankings</button></li>
+			<li><button id="about-button" class="open-subpage">About</button></li>
+		</ul>
+	</nav>
+	<div id="nav-toggle" class="nav-toggle">
+		<div class="nav-toggle-bar"></div>
+		<span id="notification-badge" class="button_badge">1</span>
+	</div>
+
+	<div id="no-game-view" class="view default-view">
+
+	</div>
+
+	<div id="submit-username-view" class="view">
+		<div id="logo">Couch Poker</div>
+		<div id="enter-username-div">
+			<input id="input-username" type="text" name="username" placeholder="Enter Name">
+		</div>
+		<div id="submit-username-div">
+			<button id="submit-username">Join Game</button>
+		</div>
+	</div>
+
+    <div id="host-view" class="view">
+		<div id="game-tip">You're the host! Wait for everyone to join the game before starting the game!</div>
+		<div id="host-div">
+			<button id="start-game">Everybody Is Here!</button>
+		</div>
+	</div>
+
+	<div id="game-not-ready-view" class="view">
+		<div id="game-tip">Waiting for the game to finish setting up...</div>
+	</div>
+
+    <div id="waiting-for-host-view" class="view">
+		<div id="game-tip">Waiting for the host to start the game...</div>
+	</div>
+
+	<div id="max-players-reached-view" class="view">
+		<div id="game-tip">Unable to join. The maximum number of players has been reached.</div>
+	</div>
+
+	<div id="knocked-out" class="view">
+		<div id="game-tip" style="margin-top: 70vh;">
+			You were knocked out of the tournament!
+		</div>
+	</div>
+
+	<div id="action-view" class="view">
+		<div class="container">
+			<div id="card-row">
+				<div id='hole-card-1'>
+				</div>
+				<div id='hole-card-2'>
+				</div>
+			</div>
+			<div id ="player-information">
+				<div id="username-text">Player</div>
+				<div id="chip-count-text">1000 chips</div>
+			</div>
+			<div class="wrap">
+				<div id ="waiting-info">
+				</div>
+			</div>
+			<div id="action-controls">
+				<div class="content-wrap">
+					<div id="move-bar">
+						<button id="fold-button" class="move-button">Fold</button><button id="check-button" class="move-button">Check</button><button id="call-button" class="move-button">Call</button><button id="bet-button" class="move-button">Bet</button><button id="raise-button" class="move-button">Raise</button>
+					</div>
+					<div id="betting-controls">
+						<div id="slider-row">
+								<input id="input-betting-amount" type="number" name="betting-amount" placeholder="0">
+								<input type="range" min="0" max="100" value="0" class="slider" id="betting-amount-slider">
+						</div>
+						<div id="button-row">
+							<button id="minus-bet-button" class="betting-button">-</button>
+							<button id="plus-bet-button" class="betting-button">+</button>
+							<button id="half-pot-bet-button" class="betting-button">1/2</button>
+							<button id="pot-bet-button" class="betting-button">POT</button>
+							<button id="max-bet-button" class="betting-button">MAX</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="hand-history-view" class="view">
+		<div id="header">
+			<div id="header-title">Hand History</div>
+		</div>
+		<table id="history-table">
+			<thead>
+				<tr id="row-header">
+					<th>Your Hand<br></th>
+					<th>Winner<br></th>
+					<th>Pot Size</th>
+				</tr>
+			</thead>
+			<tr id="special-row">
+				<td id="row">
+					<img src="Cards/As.png">
+					<img src="Cards/Ac.png">
+				</td>
+				<td id="row">TrueTeller</td>
+				<td id="row">1000</td>
+			</tr>
+			<tr id="hand-history-expanded">
+				<td colspan="3" style="width: 100%">
+					<div>
+						<div style="margin: 0 auto;">
+							<div style="margin-left:10px">
+								<div class="padding-bottom">Board:</div>
+								<div class="padding-bottom">
+									<img style="display: inline" src="Cards/2d.png">
+									<img style="display: inline" src="Cards/3h.png">
+									<img style="display: inline" src="Cards/Ah.png">
+									<img style="display: inline" src="Cards/Jh.png">
+									<img style="display: inline" src="Cards/7c.png">
+								</div>
+							</div>
+						</div>
+						<table>
+							<tr>
+								<th style="width: 35%; text-align: center;" class="padding-bottom">Player<br></th>
+								<th style="width: 40%; text-align: center;" class="padding-bottom">Hand<br></th>
+								<th style="width: 25%; text-align: center;" class="padding-bottom">Net</th>
+							</tr>
+							<tr>
+								<td style="width: 35%; text-align: center;" class="padding-bottom">TrueTeller</td>
+								<td style="width: 40%; text-align: center;" class="padding-bottom">
+									<img src="Cards/As.png">
+									<img src="Cards/Ac.png">
+								</td>
+								<td style="width: 25%; text-align: center;" class="padding-bottom">1000</td>
+							</tr>
+							<tr>
+								<td style="width: 35%; text-align: center;" class="padding-bottom">Otb_RedBaron</td>
+								<td style="width: 40%; text-align: center;" class="padding-bottom">
+									<img src="Cards/3c.png">
+									<img src="Cards/3s.png">
+								</td>
+								<td style="width: 25%; text-align: center;" class="padding-bottom">-850</td>
+							</tr>
+							<tr>
+								<td style="width: 35%; text-align: center;" class="padding-bottom">babyshark33</td>
+								<td style="width: 40%; text-align: center;" class="card-height padding-bottom">Folded</td>
+								<td style="width: 25%; text-align: center;" class="padding-bottom">-100</td>
+							</tr>
+							<tr>
+								<td style="width: 35%; text-align: center;"  class="padding-bottom">pikachu</td>
+								<td style="width: 40%; text-align: center;" class="card-height">Folded</td>
+								<td style="width: 25%; text-align: center;"  class="padding-bottom">-50</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			<tr>
+				<td id="row">
+					<img src="Cards/Td.png">
+					<img src="Cards/Js.png">
+				</td>
+				<td id="row">blue eyes</td>
+				<td id="row">700</td>
+			</tr>
+			<tr>
+				<td id="row">
+					<img src="Cards/Qc.png">
+					<img src="Cards/4h.png">
+				</td>
+				<td id="row">monkeyface<br></td>
+				<td id="row">550</td>
+			</tr>
+			<tr>
+				<td id="row">
+					<img src="Cards/As.png">
+					<img src="Cards/9c.png">
+				</td>
+				<td id="row">blue eyes</td>
+				<td id="row">1200</td>
+			</tr>
+			<tr>
+				<td id="row" style="width: 40%;">
+					<img src="Cards/Jc.png">
+					<img src="Cards/Th.png">
+				</td>
+				<td id="row">Otb_RedBaron</td>
+				<td id="row">1000</td>
+			</tr>
+			<tr>
+				<td id="row">
+					<img src="Cards/Kh.png">
+					<img src="Cards/Qh.png">
+				</td>
+				<td id="row">Otb_RedBaron</td>
+				<td id="row">700</td>
+			</tr>
+			<tr>
+				<td id="row">
+					<img src="Cards/8c.png">
+					<img src="Cards/9d.png">
+				</td>
+				<td id="row">Otb_RedBaron<br></td>
+				<td id="row">550</td>
+			</tr>
+			<tr>
+				<td id="row">
+					<img src="Cards/3d.png">
+					<img src="Cards/Ad.png">
+				</td>
+				<td id="row">TrueTeller</td>
+				<td id="row">1200</td>
+			</tr>
+			</table>
+	</div>
+
+	<div id="ranking-guide-view" class="view">
+
+		<div id="header">
+			<div id="header-title">Poker Hand Rankings</div>
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">1. Royal Flush</div>
+			<div id="hand-rank-description">A, K, Q, J, 10, all the same suit.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ah.png">
+			<img src="Cards/Kh.png">
+			<img src="Cards/Qh.png">
+			<img src="Cards/Jh.png">
+			<img src="Cards/Th.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">2. Straight Flush</div>
+			<div id="hand-rank-description">Five cards in sequential order, all the same suit.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ts.png">
+			<img src="Cards/9s.png">
+			<img src="Cards/8s.png">
+			<img src="Cards/7s.png">
+			<img src="Cards/6s.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">3. Four of a kind</div>
+			<div id="hand-rank-description">Four cards of the same rank.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Qh.png">
+			<img src="Cards/Qs.png">
+			<img src="Cards/Qd.png">
+			<img src="Cards/Qc.png">
+			<img src="Cards/7h.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">4. Full house</div>
+			<div id="hand-rank-description">Three of a kind plus a pair.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Th.png">
+			<img src="Cards/Tc.png">
+			<img src="Cards/Ts.png">
+			<img src="Cards/2h.png">
+			<img src="Cards/2c.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">5. Flush</div>
+			<div id="hand-rank-description">Five cards of the same suit</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Td.png">
+			<img src="Cards/3d.png">
+			<img src="Cards/Ad.png">
+			<img src="Cards/7d.png">
+			<img src="Cards/2d.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">6. Straight</div>
+			<div id="hand-rank-description">Five cards in sequential order.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Ah.png">
+			<img src="Cards/Kh.png">
+			<img src="Cards/Qc.png">
+			<img src="Cards/Jd.png">
+			<img src="Cards/Td.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">7. Three of a kind</div>
+			<div id="hand-rank-description">Three cards of the same rank.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/8c.png">
+			<img src="Cards/8s.png">
+			<img src="Cards/8h.png">
+			<img src="Cards/4h.png">
+			<img src="Cards/Ad.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">8. Two pair</div>
+			<div id="hand-rank-description">Two cards of the same rank, plus two cards of another rank.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/As.png">
+			<img src="Cards/Ac.png">
+			<img src="Cards/5h.png">
+			<img src="Cards/5s.png">
+			<img src="Cards/Ts.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">9. Pair</div>
+			<div id="hand-rank-description">Two cards of the same rank.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/Jd.png">
+			<img src="Cards/Js.png">
+			<img src="Cards/Th.png">
+			<img src="Cards/4h.png">
+			<img src="Cards/8d.png">
+		</div>
+
+		<div id="ranking-row-info">
+			<div id="hand-rank">10. High Card</div>
+			<div id="hand-rank-description">When you don't have a pair or anything better.</div>
+		</div>
+		<div id="ranking-row">
+			<img src="Cards/2h.png">
+			<img src="Cards/Ah.png">
+			<img src="Cards/3s.png">
+			<img src="Cards/Tc.png">
+			<img src="Cards/Kc.png">
+		</div>
+		
+	</div>
+
+	<div id="about-view" class="view">
+		<p style="padding: 10px">Couch Poker was created by students at The University of Alabama.</p>
+	</div>
+
+	<script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.7.0.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="controller.js"></script>
+	<script type="text/javascript" src="airconsole-view-manager.js"></script>
+</body>
+</html>

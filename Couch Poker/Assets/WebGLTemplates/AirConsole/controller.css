@@ -1,0 +1,663 @@
+/* Inported Styling */
+ /* Popup container */
+ .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+img {
+	width: 50px;
+	height: 69.5px;
+}
+
+.card-height {
+	height: 69.5px;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 250px;
+	background-color: rgb(78, 149, 179);
+	border: 5px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0%;
+    left: 0%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0) transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+} 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: white;
+	cursor: pointer; /* Cursor on hover */
+	border: 1px rgb(34,106,136);
+}
+
+.slider::-moz-range-thumb {
+	width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: white;
+	cursor: pointer; /* Cursor on hover */
+	border: 3px rgb(34,106,136);
+}
+
+.nav {
+	-webkit-transition: left 0.5s ease;
+	-moz-transition: left 0.5s ease;
+	-ms-transition: left 0.5s ease;
+	-o-transition: left 0.5s ease;
+	transition: left 0.5s ease;
+	background: rgba(94, 94, 94);
+	color: white;
+	cursor: pointer;
+	font-size: 2rem;
+	height: 100vh;
+	left: -100%;
+	position: fixed;
+	top: 0;
+	width: 75vw;;
+	z-index: 2;
+  }
+  
+  .nav.expanded { left: 0; }
+  
+  .nav ul {
+	width: 100%;
+	top: 25%;
+	-webkit-transform: translateY(-25%);
+	-ms-transform: translateY(-25%);
+	transform: translateY(-25%);
+	list-style: none;
+	margin-top: 15vh;
+	padding: 0;
+  }
+
+  .nav li button{
+	  border: 0;
+	  background-color: transparent;
+	  color: white;
+  }
+  .nav li button:hover{
+	background-color: white;
+	color: black;
+}
+
+.nav-toggle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: fixed;
+  height: 20px;
+  left: 10px;
+  top: 16px;
+  width: 40px;
+  z-index: 2;
+}
+
+.button_badge {
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+  text-align: center;
+ 
+  padding: 1px 3px;
+  font-size: 14px;
+
+  width: 3vw;
+  
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: -10px;
+  right: -5px;
+}
+
+.button_badge_2 {
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+  text-align: center;
+ 
+  padding: 1px 3px;
+  font-size: 14px;
+
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: 2.5vh;
+  right: 2.5vh;
+  
+  width: 3vw;
+}
+
+.nav-toggle:hover { opacity: 0.8; }
+
+.nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: white;
+  content: '';
+  height: 0.4rem;
+  width: 100%;
+}
+
+.nav-toggle .nav-toggle-bar { margin-top: 0; }
+
+.nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+
+.nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+
+.nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+
+.nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+  background: white;
+  margin-top: 0;
+}
+
+.nav-toggle.expanded .nav-toggle-bar::after {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-toggle.expanded .nav-toggle-bar::before {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.ul {
+	width: 100%;
+}
+
+/*****************************************/
+
+div {
+	font-family: "Verdana", Geneva, sans-serif;
+	color: white;
+}
+
+body {
+	background-color: rgb(34,106,136);
+	margin: 0;
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+button {
+	color:rgb(34,106,136);
+}
+
+input {
+	
+	color:rgb(34,106,136);
+}
+
+.view {
+	height: 100vh;
+	width: 100vw;
+}
+
+#start-view {
+	display: grid;
+	grid-template-areas: "."
+											 "form"
+											 "."
+											 "submit";
+	place-items: center;
+}
+
+#enter-username-div {
+	width: 80%;
+	font-size: 32px;
+	grid-area: form;
+}
+
+#submit-username-div {
+	width: 100%;
+	font-size: 24px;
+	grid-area: submit;
+}
+
+#host-div {
+	width: 100%;
+	font-size: 24px;
+	grid-area: submit;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+#input-username {
+	position: absolute;
+	text-align: center;
+	margin-top: 60vh;
+	margin-left: 5%;
+	width: 90%;
+	height: 60px;
+	font-size: 28px;
+	border: 2px;
+	border-color: rgb(116,203,234);
+	border-radius: 15px 5px 15px 5px;
+	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
+}
+
+#submit-username {
+	background-color:white;
+	border: 2px;
+	position: absolute;
+	margin-top: 80vh;
+	width: 50%;
+	height: 70px;
+	margin-left: 25%;
+	font-size: 24px;
+	border-color: rgb(116,203,234);
+	border-radius: 15px 5px 15px 5px;
+	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
+}
+
+#game-tip {
+	position: absolute;
+	margin-top: 10vh;
+	margin-left: 10%;
+	text-align: center;
+	width: 80%;
+	font-size: 14px;
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234);
+}
+
+#start-game {
+	border: 2px;
+	position: absolute;
+	margin-top: 80vh;
+	width: 70%;
+	height: 70px;
+	margin-left: 15%;
+	font-size: 24px;
+	border-color: rgb(116,203,234);
+	border-radius: 15px 5px 15px 5px;
+	box-shadow: 1px 1px 2px black, 0 0 1px rgb(116,203,234), 0 0 5px rgb(116,203,234);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height:100%;
+}
+
+.move-button {
+	border: 2px;
+	width: 25%;
+	height: 50px;
+	font-size: 5vw;
+	border-color: rgb(116,203,234);
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px black, 0 0 3px rgb(116,203,234), 0 0 3px rgb(116,203,234);}
+
+#move-bar {
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	width: 100%;
+	text-align: justify;
+    display: flex;
+  	justify-content: space-around;
+	zoom: 1;
+}
+
+#logo {
+	text-transform: uppercase;
+	font-size: 58px;
+	letter-spacing: 5px;
+	font-weight: 800;
+ 	position: absolute;
+	margin-top: 10vh;
+	margin-left: 10%;
+	text-align: center;
+	width: 80%;
+	color: white;
+	text-shadow: 3px 2px 0px rgb(34,106,136)k;
+}
+#logo:after {
+  content:"couch poker";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+}
+#logo:after {
+  background: url(https://subtlepatterns.com/patterns/crossed_stripes.png) repeat;
+  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, rgb(116,203,234) 25%, rgb(116,203,234) 50%, transparent 50%, transparent 75%, rgb(116,203,234) 75%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+}
+
+.wrap {
+	align-items: center;
+	flex: 1;
+}
+
+#game-start-info {
+	text-align: center;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#waiting-info {
+	text-align: center;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#player-information {
+	text-align: center;
+	margin-top: 2vh;
+	font-size: 3vh;
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 3px rgb(116,203,234);
+}
+
+#card-row {
+	text-align:center;
+	margin-top: 15vh;
+}
+
+#hole-card-1 {
+	display: inline-block;
+	width: 140px;
+	height: 195px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#hole-card-2 {
+	display: inline-block;
+	width: 140px;
+	height: 195px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+#slider-row {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.slider {
+    width: 100%; /* Full-width */
+    height: 40px; /* Specified height */
+    outline: none; /* Remove outline */
+}
+
+#input-betting-amount {
+	width: 30vw;
+	text-align: center;
+	font-size: 5vw;
+	height: 40px;
+	border-color: rgb(5, 100, 41);
+	box-shadow: -1px -1px -1px black, 0 0 5px rgb(116,203,234), 0 0 5px rgb(116,203,234);}
+
+.content-wrap {
+	padding: 10px;
+}
+
+#action-controls {
+	width: 100%;
+	position: absolute;
+    bottom: 0px;
+}
+
+#betting-controls {
+	background-color: rgba(255, 255, 255, 0.145);
+	padding: 10px;
+}
+
+#betting-amount-slider {
+	margin-top: 1vh;
+	vertical-align: middle;
+	width: 72vw;
+	font-size: 4vw;
+}
+
+#button-row {
+	margin-top: 1.5vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+#button-panel {
+	margin-top: 1.5vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.betting-button {
+	border: 2px;
+	width: 20vw;
+	text-align:center;
+	height: 7vw;
+	font-size: 5vw;
+	border-color: rgb(5, 100, 41);
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px black, 0 0 3px rgb(116,203,234), 0 0 3px rgb(116,203,234);}
+
+#plus-bet-button {
+	width: 7vw;
+	height: 7vw;
+	font-size: 5vw;
+	text-align:center;
+	padding: 0px;
+}
+
+#minus-bet-button {
+	width: 7vw;
+	height: 7vw;
+	font-size: 5vw;
+	text-align:center;
+	padding: 0px;
+}
+#history-table {
+	border-collapse: collapse;
+}
+#history-table > tbody > tr {
+	border-bottom: 1px solid white;
+}
+
+.padding-bottom {
+	padding-bottom: 0.5em;
+}
+
+#history-table > tbody > tr > td {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+#history-table > thead > tr > th {
+	padding-bottom: 0.5em;
+}
+#history-table > tbody > tr:last-child {
+	border-bottom: none;
+}
+
+
+#username-text {
+	font-size: 4vh;
+}
+
+#about-view {
+	margin-top: 15vh;
+}
+
+#ranking-guide-view {
+	overflow: scroll;
+}
+
+#row {
+	width: 33.3vw;
+	text-align: center;
+}
+
+#hand-history-view {
+	overflow: scroll;
+}
+
+#ranking-row {
+	display: flex;
+	margin-bottom: 0.5em;
+}
+
+#ranking-row > img {
+	 margin-right:5px;
+}
+
+#ranking-row > img:first-of-type {
+	 margin-left:10px;
+}
+
+#ranking-row-info {
+	padding: 10px;
+	overflow: visible;
+}
+
+#header {
+	padding-top: 11.5vh;
+	padding-bottom: 3.5vh;
+	justify-content: center;
+}
+
+#header-title {
+	font-size: 6vw;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+}
+
+#header-description {
+	vertical-align: middle;
+	font-style: oblique;
+	font-size: 2vw;
+	color: white;
+	text-align: center;
+}
+
+#hand-rank {
+	font-size: 5vw;
+	color: white;
+}
+
+#hand-rank-description {
+	font-size: 4vw;
+	color: white;
+	word-wrap: normal;
+}
+
+.open-subpage {
+	width: 100%;
+	height: 6vh;
+	font-size: 5vw;
+	text-align: left;
+}
+
+.button {
+	background-color: white;
+}
+
+#nav-bar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: fixed;
+  height: 52px;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+
